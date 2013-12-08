@@ -130,3 +130,7 @@ ul
     margin-right: 5px;
     cursor: pointer;
 }
+
+.footer, .push {
+height: 4em;
+}
