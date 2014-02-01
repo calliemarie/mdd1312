@@ -1,30 +1,13 @@
 body {
-   background-color: #e3a9f4;
+   background-color: #712388;
 }
 h1, h2, h3 {
     font-family: 'Lobster', cursive;
 }
 
-ul
+ul, li
 {
     list-style-type: none;
-}
-
-.signin{
-	background-color: black;
-	text-align: right;
-	padding: 12px; 
-}
-
-.signin a:link {color: #ffffff;}
-.signin a:visited {color: #ffffff; text-decoration: none}
-.signin a:hover {color: white; background-color: #7e28d9; text-decoration: none}
-.signin a:active {color: white;}
-
-.login, .signup{
-	border: black;
-	text-align: center;
-	margin-top: 30px;
 }
 
 .banner {
@@ -34,7 +17,7 @@ ul
 }
 .banner h1 {
     font-size: 50px;
-    line-height: 150px;
+    margin-top: 20px;
 }
 
 .banner a {
@@ -54,17 +37,19 @@ ul
     line-height: 50px;
     background-color: #333;
     color: #FFF;
+    font-family: cursive;
     margin-bottom: 10px;
+    margin-right: 10px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;
 }
-.search-box label {
-    font-weight: bold;
-    margin-left: 10px;
-}
 
+
+input[type="text"]{
+	font-size: 20px;
+}
 .episode-list {
     list-style: none;
     margin: 0px;
@@ -92,8 +77,8 @@ ul
 
 .episode-list li {
     padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: dotted 1px #7b3df7;
+    margin-bottom: 0px;
+    border-bottom: dotted 1px #7c3ef8;
 }
 
 .episode-list li:last-child {
