@@ -8,30 +8,23 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js" type="text/javascript"></script>	
     <script type="text/javascript" src="js/tvaddict/app.js"></script>
-    <script type="text/javascript" src="js/services.js"></script>
 	<script type="text/javascript" src="js/tvaddict/controllers/mainController.js"></script>
 	<link rel="stylesheet" href="css/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-app="TVAddictApp">
-  
- <!--experimenting with ng-view
-  <ng-view></ng-view>
- -->
-  <div class='banner'>
+  <body>
+  		
+  		<div class='banner'>
         	<div class='container'>
-            	<h1><a href="index.html">TV Addict</a></h1>
+            	<h1><a href="index.html">Television Addiction</a></h1>
 				</div>
 		</div>
 	<div class="container main-frame" ng-app="TVAddictApp" ng-controller="mainController" ng-init="init()">
-		<!--creates search bar-->
 		<div class="search-box row-fluid form-inline">
-			<input type="text" placeholder="search. (you know you want to)" ng-model="filterText"/>
+			<input type="text" placeholder="search" ng-model="filterText"/>
 		</div>
-		
-		
-        <div class="results-top"></div>
-        <div class="results-container">
+        <div class="resultsTop"></div>
+        <div class="resultsContainer">
             <ul class="episode-list"></ul>
 				<li ng-repeat="tvshow in results | filter: filterText">
 				<div class="row-fluid">
@@ -39,18 +32,21 @@
 						<img src="{{tvshow.episode.images.screen}}" />
 					</div>
 					<div class="span6">
-					<h3><a href={{tvshow.show.url}}>{{tvshow.show.title}}: {{tvshow.episode.title}}</a></h3>
-						<p>{{tvshow.episode.overview}}</p>
+					<h3><a href="{{search.shows.url}}">{{tvshow.show.title}}: {{tvshow.episode.title}}</a></h3>
+						<p>{{tvshow.show.overview}}</p>
+						<ul class="showInfo">
+			                <li><strong>Airs On:</strong> {{tvshow.show.air_day}} {{tvshow.show.air_time}}</li>
+			                <li><strong>Network:</strong> {{tvshow.show.network}}</li>
+			                <li><strong>Season #:</strong> {{tvshow.episode.season}}</li>
+			                <li><strong>Genre(s):</strong> <span class="label label-inverse genre" ng-repeat="genre in tvshow.show.genres">{{genre}}</span></li>
+			                <li><strong>Actors:</strong> {{tvshow.show.people}}</li>
+
+			            </ul>
+
 					</div>
 					<div class="span3">
 						<div class="fulldate pull-right label label-info">{{tvshow.date}}</div>
-			            <ul class="show-info">
-			                <li><strong>On Air:</strong> {{tvshow.show.air_day}} {{tvshow.show.air_time}}</li>
-			                <li><strong>Network:</strong> {{tvshow.show.network}}</li>
-			                <li><strong>Season #:</strong> {{tvshow.episode.season}}</li>
-			                <li><strong>Genres:</strong> <span class="label label-inverse genre" ng-repeat="genre in tvshow.show.genres">{{genre}}</span></li>
-			            </ul>
-					</div>
+			            					</div>
 				</div>
 			</li>
             
@@ -59,12 +55,5 @@
         
         
 	</div>
-
-  		
-  		<!--FIREBASE-->
-<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
-<script type='text/javascript'
-        src='https://cdn.firebase.com/v0/firebase-simple-login.js'>
-</script>
   </body>
 </html>	

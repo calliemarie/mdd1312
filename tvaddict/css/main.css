@@ -5,9 +5,21 @@ h1, h2, h3 {
     font-family: 'Lobster', cursive;
 }
 
+input{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
 ul, li
 {
     list-style-type: none;
+    border-top: 1px solid rgba(255,255,255,0.6);
+}
+
+.episode-list{
+	    border-top: 1px solid rgba(255,255,255,0.6);
+
 }
 
 .banner {
@@ -17,13 +29,29 @@ ul, li
 }
 .banner h1 {
     font-size: 50px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-.banner a {
+.banner a:visited {
     color: #FFFFFF;
     text-decoration: none;
 }
+
+a {
+	text-decoration: none;
+	color: #712388;
+}
+
+a:visited {
+	color: #712388;
+}
+
+a:hover {
+	color:#000000;
+	text-decoration: none;
+}
+
+
 .main-frame {
     background-color: #FFF;
     padding: 10px;
